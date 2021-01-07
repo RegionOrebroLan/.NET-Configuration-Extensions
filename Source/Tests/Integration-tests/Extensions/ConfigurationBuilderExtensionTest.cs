@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RegionOrebroLan.Configuration.Extensions;
 
-namespace RegionOrebroLan.Configuration.IntegrationTests.Extensions
+namespace IntegrationTests.Extensions
 {
 	[TestClass]
 	public class ConfigurationBuilderExtensionTest
@@ -16,7 +16,7 @@ namespace RegionOrebroLan.Configuration.IntegrationTests.Extensions
 		[TestMethod]
 		public void Test()
 		{
-			var fileConfigurationProviders = ((ConfigurationRoot) Host
+			var fileConfigurationProviders = ((ConfigurationRoot)Host
 					.CreateDefaultBuilder(null)
 					.Build()
 					.Services
@@ -26,7 +26,7 @@ namespace RegionOrebroLan.Configuration.IntegrationTests.Extensions
 			Assert.AreEqual("appsettings.json", fileConfigurationProviders[0].Source.Path);
 			Assert.AreEqual("appsettings.Production.json", fileConfigurationProviders[1].Source.Path);
 
-			fileConfigurationProviders = ((ConfigurationRoot) Host
+			fileConfigurationProviders = ((ConfigurationRoot)Host
 					.CreateDefaultBuilder(null)
 					.ConfigureAppConfiguration(configurationBuilder => configurationBuilder
 						.ResolvePaths(new Dictionary<string, string> {{"appsettings", "AppSettings"}}))

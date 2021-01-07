@@ -2,9 +2,7 @@
 <RunSettings>
 	<RunConfiguration>
 		<EnvironmentVariables>
-			<AppSettings.json>{
-	"DOCKER_ENABLE_CI": true,
-	"DOCKER_REGISTRY_SERVER_URL": "https://index.docker.io",
+			<AppSettings_json>{
 	"ApiResources": [
 		{
 			"Name": "role",
@@ -396,9 +394,9 @@
 			"UserName": "Bob"
 		}
 	]
-}</AppSettings.json>
-			<AppSettings.Json2></AppSettings.Json2>
-			<APPSETTINGS.JSON.3></APPSETTINGS.JSON.3>
+}</AppSettings_json>
+			<AppSettings_Json2></AppSettings_Json2>
+			<APPSETTINGS_JSON.3></APPSETTINGS_JSON.3>
 		</EnvironmentVariables>
 	</RunConfiguration>
 </RunSettings>

@@ -13,7 +13,7 @@ namespace RegionOrebroLan.Configuration.EnvironmentVariables
 	{
 		#region Fields
 
-		private const string _appSettingsJsonKey = "AppSettings.json";
+		private const string _appSettingsJsonKey = "AppSettings_json";
 
 		#endregion
 

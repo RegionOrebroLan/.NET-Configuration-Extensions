@@ -18,7 +18,7 @@ namespace RegionOrebroLan.Configuration.Extensions
 			if(dictionary == null)
 				throw new ArgumentNullException(nameof(dictionary));
 
-			var keys = configurationProvider.GetChildKeys(Enumerable.Empty<string>(), parent).ToArray();
+			var keys = configurationProvider.GetChildKeys(Enumerable.Empty<string>(), parent).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
 
 			if(keys.Any())
 			{

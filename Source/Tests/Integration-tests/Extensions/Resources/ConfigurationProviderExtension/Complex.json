@@ -1,8 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RunSettings>
-	<RunConfiguration>
-		<EnvironmentVariables>
-			<AppSettings_json>{
+{
 	"ApiResources": [
 		{
 			"Name": "role",
@@ -394,9 +390,4 @@
 			"UserName": "Bob"
 		}
 	]
-}</AppSettings_json>
-			<AppSettings_Json2></AppSettings_Json2>
-			<APPSETTINGS_JSON.3></APPSETTINGS_JSON.3>
-		</EnvironmentVariables>
-	</RunConfiguration>
-</RunSettings>
+}

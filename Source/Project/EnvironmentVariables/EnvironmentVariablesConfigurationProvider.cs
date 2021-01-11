@@ -4,7 +4,6 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
 using RegionOrebroLan.Configuration.Extensions;
 
@@ -16,7 +15,6 @@ namespace RegionOrebroLan.Configuration.EnvironmentVariables
 		#region Fields
 
 		private const string _appSettingsJsonKey = "AppSettings_json";
-		private const string _keyDelimiter = "__";
 
 		#endregion
 
@@ -75,12 +73,10 @@ namespace RegionOrebroLan.Configuration.EnvironmentVariables
 				{
 					foreach(var entry in this.CreateData(item.Value))
 					{
-						var key = entry.Key.Replace(ConfigurationPath.KeyDelimiter, _keyDelimiter);
-
-						if(data.ContainsKey(key))
+						if(data.ContainsKey(entry.Key))
 							continue;
 
-						data.Add(key, entry.Value);
+						data.Add(entry.Key, entry.Value);
 					}
 				}
 				catch

@@ -37,7 +37,7 @@ namespace IntegrationTests.EnvironmentVariables
 			if(!data.Any())
 				Assert.Fail("The test can not be run with ReSharper yet.");
 			else
-				Assert.AreEqual(342, data.Count);
+				Assert.AreEqual(217, data.Count);
 		}
 
 		#endregion

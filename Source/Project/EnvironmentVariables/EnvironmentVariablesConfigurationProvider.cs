@@ -4,7 +4,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Text;
-using RegionOrebroLan.Configuration.Json;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
+using RegionOrebroLan.Configuration.Extensions;
 
 namespace RegionOrebroLan.Configuration.EnvironmentVariables
 {
@@ -14,6 +16,7 @@ namespace RegionOrebroLan.Configuration.EnvironmentVariables
 		#region Fields
 
 		private const string _appSettingsJsonKey = "AppSettings_json";
+		private const string _keyDelimiter = "__";
 
 		#endregion
 
@@ -26,7 +29,7 @@ namespace RegionOrebroLan.Configuration.EnvironmentVariables
 		#region Properties
 
 		public virtual string AppSettingsJsonKey => _appSettingsJsonKey;
-		protected internal virtual JsonConfigurationProvider JsonConfigurationProvider { get; } = new JsonConfigurationProvider();
+		protected internal virtual JsonConfigurationProvider JsonConfigurationProvider { get; } = new JsonConfigurationProvider(new JsonConfigurationSource());
 
 		#endregion
 
@@ -38,7 +41,7 @@ namespace RegionOrebroLan.Configuration.EnvironmentVariables
 			{
 				this.JsonConfigurationProvider.Load(stream);
 
-				return this.JsonConfigurationProvider.Data;
+				return this.JsonConfigurationProvider.ToDictionary();
 			}
 		}
 
@@ -70,11 +73,14 @@ namespace RegionOrebroLan.Configuration.EnvironmentVariables
 			{
 				try
 				{
-					var appSettingsData = this.CreateData(item.Value);
-
-					foreach(var appSettingsItem in appSettingsData.Where(appSettingsItem => !data.ContainsKey(appSettingsItem.Key)))
+					foreach(var entry in this.CreateData(item.Value))
 					{
-						data.Add(appSettingsItem.Key, appSettingsItem.Value);
+						var key = entry.Key.Replace(ConfigurationPath.KeyDelimiter, _keyDelimiter);
+
+						if(data.ContainsKey(key))
+							continue;
+
+						data.Add(key, entry.Value);
 					}
 				}
 				catch

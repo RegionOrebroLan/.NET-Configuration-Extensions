@@ -27,10 +27,8 @@ namespace RegionOrebroLan.Configuration.Extensions
 					configurationProvider.PopulateDictionary(dictionary, parent != null ? ConfigurationPath.Combine(parent, key) : key);
 				}
 			}
-			else if(parent != null)
+			else if(parent != null && configurationProvider.TryGet(parent, out var value))
 			{
-				configurationProvider.TryGet(parent, out var value);
-
 				dictionary[parent] = value;
 			}
 		}

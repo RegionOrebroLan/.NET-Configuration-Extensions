@@ -62,27 +62,24 @@ namespace RegionOrebroLan.Configuration.EnvironmentVariables
 
 			var data = new SortedDictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
-			foreach(var item in this.Data)
-			{
-				data.Add(item.Key, item.Value);
-			}
-
 			foreach(var item in appSettings)
 			{
 				try
 				{
 					foreach(var entry in this.CreateData(item.Value))
 					{
-						if(data.ContainsKey(entry.Key))
-							continue;
-
-						data.Add(entry.Key, entry.Value);
+						data[entry.Key] = entry.Value;
 					}
 				}
 				catch
 				{
-					data.Add(item.Key, item.Value);
+					data[item.Key] = item.Value;
 				}
+			}
+
+			foreach(var item in this.Data)
+			{
+				data[item.Key] = item.Value;
 			}
 
 			this.Data = data;

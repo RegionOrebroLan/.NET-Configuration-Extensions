@@ -106,11 +106,14 @@ namespace IntegrationTests.Extensions
 			configuration = configurationBuilder.Build();
 			provider = configuration.Providers.ElementAt(0);
 			dictionary = provider.ToDictionary();
+			Assert.IsTrue(dictionary is SortedDictionary<string, string>, "The dictionary should be a SortedDictionary<string, string>.");
 			await this.DefaultToDictionaryTest(dictionary);
 
 			var jsonConfigurationProvider = (JsonConfigurationProvider)provider;
 			var internalDictionary = await this.GetInternalDictionaryAsync(jsonConfigurationProvider);
-			await this.DefaultToDictionaryTest(internalDictionary);
+			Assert.IsTrue(internalDictionary is Dictionary<string, string>, "The internal dictionary should be a Dictionary<string, string>.");
+			Assert.AreEqual(7, internalDictionary.Count);
+			Assert.AreEqual("C:A:A:A:A:C", internalDictionary.ElementAt(0).Key);
 
 			configurationBuilder = await this.CreateConfigurationBuilderAsync("Empty");
 			configuration = configurationBuilder.Build();

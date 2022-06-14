@@ -6,7 +6,7 @@
 	</PropertyGroup>
 	<PropertyGroup Label="Assembly">
 		<AssemblyName>RegionOrebroLan.Configuration</AssemblyName>
-		<AssemblyOriginatorKeyFile>$(SolutionDir).Global\Signing\StrongName.snk</AssemblyOriginatorKeyFile>
+		<AssemblyOriginatorKeyFile>$(SolutionDir)Source\.Global\Signing\StrongName.snk</AssemblyOriginatorKeyFile>
 		<AssemblyVersion>$(VersionPrefix).0</AssemblyVersion>
 		<Description>Additions and extensions for .NET configuration.</Description>
 		<FileVersion>$(VersionPrefix).0</FileVersion>
@@ -30,7 +30,7 @@
 	</ItemGroup>
 	<Target Name="HandleAssemblyOriginatorKeyFile" BeforeTargets="BeforeBuild" Condition="$(SignAssembly) AND !Exists('$(AssemblyOriginatorKeyFile)')">
 		<PropertyGroup>
-			<_DevelopmentAssemblyOriginatorKeyFile>$(SolutionDir).Global\Signing\StrongName.Development.snk</_DevelopmentAssemblyOriginatorKeyFile>
+			<_DevelopmentAssemblyOriginatorKeyFile>$(SolutionDir)Source\.Global\Signing\StrongName.Development.snk</_DevelopmentAssemblyOriginatorKeyFile>
 		</PropertyGroup>
 		<Warning Text="The strong-name-key-file '$(AssemblyOriginatorKeyFile)' does not exist. The strong-name-key-file '$(_DevelopmentAssemblyOriginatorKeyFile)' is used instead." />
 		<PropertyGroup>

@@ -7,41 +7,41 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Global", ".Global", "{1140
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{43D62E8E-B7D9-4020-A5CA-3D94D999CD5A}"
 	ProjectSection(SolutionItems) = preProject
-		Directory.Build.props = Directory.Build.props
-		Directory.Build.targets = Directory.Build.targets
+		Source\Directory.Build.props = Source\Directory.Build.props
+		Source\Directory.Build.targets = Source\Directory.Build.targets
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{E3F474E2-0E85-47CD-A2DB-55852CEDB670}"
 	ProjectSection(SolutionItems) = preProject
-		..\ReadMe.md = ..\ReadMe.md
+		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Settings", "Settings", "{E69917BB-D44E-418E-AE1E-8C62EE842E58}"
 	ProjectSection(SolutionItems) = preProject
-		..\.editorconfig = ..\.editorconfig
-		..\.gitignore = ..\.gitignore
-		..\License = ..\License
-		..\NuGet.config = ..\NuGet.config
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		License = License
+		NuGet.config = NuGet.config
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Signing", "Signing", "{169D8A5D-6205-40F4-86B6-054AF7BEE7B3}"
 	ProjectSection(SolutionItems) = preProject
-		.Global\Signing\ReadMe.md = .Global\Signing\ReadMe.md
-		.Global\Signing\StrongName.Development.snk = .Global\Signing\StrongName.Development.snk
+		Source\.Global\Signing\ReadMe.md = Source\.Global\Signing\ReadMe.md
+		Source\.Global\Signing\StrongName.Development.snk = Source\.Global\Signing\StrongName.Development.snk
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BD932090-BBDD-468D-990C-4425B779A1FD}"
 	ProjectSection(SolutionItems) = preProject
-		Tests\.editorconfig = Tests\.editorconfig
-		Tests\Directory.Build.props = Tests\Directory.Build.props
-		Tests\Directory.Build.targets = Tests\Directory.Build.targets
+		Source\Tests\.editorconfig = Source\Tests\.editorconfig
+		Source\Tests\Directory.Build.props = Source\Tests\Directory.Build.props
+		Source\Tests\Directory.Build.targets = Source\Tests\Directory.Build.targets
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project", "Project\Project.csproj", "{D9A714B9-5387-4FB3-AF50-858F95205971}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project", "Source\Project\Project.csproj", "{D9A714B9-5387-4FB3-AF50-858F95205971}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Integration-tests", "Tests\Integration-tests\Integration-tests.csproj", "{16598E18-E593-4C45-88FA-21A648D2A4A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Integration-tests", "Source\Tests\Integration-tests\Integration-tests.csproj", "{16598E18-E593-4C45-88FA-21A648D2A4A3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unit-tests", "Tests\Unit-tests\Unit-tests.csproj", "{3ED78059-9F54-4511-8A4F-D0DDF380EC0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unit-tests", "Source\Tests\Unit-tests\Unit-tests.csproj", "{3ED78059-9F54-4511-8A4F-D0DDF380EC0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

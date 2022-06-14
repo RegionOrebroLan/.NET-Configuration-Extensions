@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<AnalysisLevel>6.0</AnalysisLevel>
-		<AssemblyOriginatorKeyFile>$(SolutionDir)Source\.Global\Signing\StrongName.Development.snk</AssemblyOriginatorKeyFile>
+		<AssemblyOriginatorKeyFile>$(SolutionDir)StrongName.Development.snk</AssemblyOriginatorKeyFile>
 		<DelaySign>false</DelaySign>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>

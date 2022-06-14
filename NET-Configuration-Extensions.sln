@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29905.134
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Global", ".Global", "{11402557-CA24-4A83-BE7F-E88F242BAA07}"
 EndProject
@@ -22,12 +22,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Settings", "Settings", "{E6
 		.gitignore = .gitignore
 		License = License
 		NuGet.config = NuGet.config
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Signing", "Signing", "{169D8A5D-6205-40F4-86B6-054AF7BEE7B3}"
-	ProjectSection(SolutionItems) = preProject
-		Source\.Global\Signing\ReadMe.md = Source\.Global\Signing\ReadMe.md
-		Source\.Global\Signing\StrongName.Development.snk = Source\.Global\Signing\StrongName.Development.snk
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BD932090-BBDD-468D-990C-4425B779A1FD}"
@@ -69,7 +63,6 @@ Global
 		{43D62E8E-B7D9-4020-A5CA-3D94D999CD5A} = {11402557-CA24-4A83-BE7F-E88F242BAA07}
 		{E3F474E2-0E85-47CD-A2DB-55852CEDB670} = {11402557-CA24-4A83-BE7F-E88F242BAA07}
 		{E69917BB-D44E-418E-AE1E-8C62EE842E58} = {11402557-CA24-4A83-BE7F-E88F242BAA07}
-		{169D8A5D-6205-40F4-86B6-054AF7BEE7B3} = {11402557-CA24-4A83-BE7F-E88F242BAA07}
 		{16598E18-E593-4C45-88FA-21A648D2A4A3} = {BD932090-BBDD-468D-990C-4425B779A1FD}
 		{3ED78059-9F54-4511-8A4F-D0DDF380EC0A} = {BD932090-BBDD-468D-990C-4425B779A1FD}
 	EndGlobalSection

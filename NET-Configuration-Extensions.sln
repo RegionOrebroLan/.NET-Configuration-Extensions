@@ -5,12 +5,6 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Global", ".Global", "{11402557-CA24-4A83-BE7F-E88F242BAA07}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{43D62E8E-B7D9-4020-A5CA-3D94D999CD5A}"
-	ProjectSection(SolutionItems) = preProject
-		Source\Directory.Build.props = Source\Directory.Build.props
-		Source\Directory.Build.targets = Source\Directory.Build.targets
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{E3F474E2-0E85-47CD-A2DB-55852CEDB670}"
 	ProjectSection(SolutionItems) = preProject
 		ReadMe.md = ReadMe.md
@@ -60,7 +54,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{43D62E8E-B7D9-4020-A5CA-3D94D999CD5A} = {11402557-CA24-4A83-BE7F-E88F242BAA07}
 		{E3F474E2-0E85-47CD-A2DB-55852CEDB670} = {11402557-CA24-4A83-BE7F-E88F242BAA07}
 		{E69917BB-D44E-418E-AE1E-8C62EE842E58} = {11402557-CA24-4A83-BE7F-E88F242BAA07}
 		{16598E18-E593-4C45-88FA-21A648D2A4A3} = {BD932090-BBDD-468D-990C-4425B779A1FD}

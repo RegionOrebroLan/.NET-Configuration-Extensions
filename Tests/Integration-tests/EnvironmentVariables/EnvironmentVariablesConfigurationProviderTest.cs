@@ -21,10 +21,12 @@ namespace IntegrationTests.EnvironmentVariables
 			var configurationBuilder = new ConfigurationBuilder();
 			configurationBuilder.Add(new Microsoft.Extensions.Configuration.EnvironmentVariables.EnvironmentVariablesConfigurationSource());
 			var configuration = configurationBuilder.Build();
-			var keysToExclude = configuration
-				.AsEnumerable().Select(item => item.Key)
-				.Where(key => !key.StartsWith(new EnvironmentVariablesConfigurationProvider(null).AppSettingsJsonKey, StringComparison.OrdinalIgnoreCase))
-				.ToHashSet(StringComparer.OrdinalIgnoreCase);
+			var keysToExclude = new HashSet<string>(
+				configuration
+					.AsEnumerable().Select(item => item.Key)
+					.Where(key => !key.StartsWith(new EnvironmentVariablesConfigurationProvider(null).AppSettingsJsonKey, StringComparison.OrdinalIgnoreCase)),
+				StringComparer.OrdinalIgnoreCase
+			);
 
 			configurationBuilder = new ConfigurationBuilder();
 			configurationBuilder.Add(new EnvironmentVariablesConfigurationSource());

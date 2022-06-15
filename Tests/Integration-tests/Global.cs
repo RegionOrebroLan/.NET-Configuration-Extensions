@@ -8,7 +8,7 @@ namespace IntegrationTests
 		#region Fields
 
 		// ReSharper disable PossibleNullReferenceException
-		public static readonly string ProjectPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName;
+		public static readonly string ProjectDirectoryPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName;
 		// ReSharper restore PossibleNullReferenceException
 
 		#endregion

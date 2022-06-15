@@ -19,10 +19,10 @@ namespace IntegrationTests.Extensions
 
 		protected internal virtual async Task<IConfigurationBuilder> CreateConfigurationBuilderAsync(string fileName)
 		{
-			var jsonFilePath = Path.Combine(Global.ProjectPath, "Extensions", "Resources", "ConfigurationProviderExtension", $"{fileName}.json");
+			var jsonFilePath = Path.Combine(Global.ProjectDirectoryPath, "Extensions", "Resources", "ConfigurationProviderExtension", $"{fileName}.json");
 
 			var configurationBuilder = new ConfigurationBuilder();
-			configurationBuilder.SetBasePath(Global.ProjectPath);
+			configurationBuilder.SetBasePath(Global.ProjectDirectoryPath);
 
 			configurationBuilder.AddJsonFile(jsonFilePath, false, false);
 

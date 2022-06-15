@@ -1,6 +1,7 @@
 using System;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Primitives;
 using RegionOrebroLan.Configuration.Internal;
 using RegionOrebroLan.Logging.Extensions;
 
@@ -11,9 +12,9 @@ namespace RegionOrebroLan.Configuration
 	{
 		#region Constructors
 
-		public ConfigurationMonitor(IOptionsMonitor<EmptyOptions> optionsMonitor, ILoggerFactory loggerFactory, ISystemClock sytemClock)
+		public ConfigurationMonitor(IConfiguration configuration, ILoggerFactory loggerFactory, ISystemClock sytemClock)
 		{
-			this.ChangeListener = (optionsMonitor ?? throw new ArgumentNullException(nameof(optionsMonitor))).OnChange(this.OnOptionsChange);
+			this.ChangeListener = ChangeToken.OnChange(() => (configuration ?? throw new ArgumentNullException(nameof(configuration))).GetReloadToken(), this.OnConfigurationChange);
 			this.Logger = (loggerFactory ?? throw new ArgumentNullException(nameof(loggerFactory))).CreateLogger(this.GetType());
 			this.SystemClock = sytemClock ?? throw new ArgumentNullException(nameof(sytemClock));
 		}
@@ -44,7 +45,7 @@ namespace RegionOrebroLan.Configuration
 			this.Changed?.Invoke(this, e);
 		}
 
-		protected internal virtual void OnOptionsChange(EmptyOptions _)
+		protected internal virtual void OnConfigurationChange()
 		{
 			this.Logger.LogDebugIfEnabled("The configuration has changed.");
 

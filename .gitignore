@@ -400,3 +400,6 @@ FodyWeavers.xsd
 # Custom
 *.snk
 !StrongName.Development.snk
+
+Tests/Integration-tests/Test-directory/*
+!Tests/Integration-tests/Test-directory/ReadMe.md
